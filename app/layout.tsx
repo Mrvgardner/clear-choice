@@ -9,7 +9,7 @@ import Script from 'next/script'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 const siteName = 'Clear Choice Payment Solutions'
 const siteDesc =
-  'Payments Without Limits. Merchant services, ATM placement & monitoring, kiosks, and FX-enabled ATMs built to grow your revenue.'
+  'Clear Choice Payment Solutions: Merchant services, ATM placement & monitoring, kiosks, and FX-enabled ATMs built to grow your revenue.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -18,19 +18,21 @@ export const metadata: Metadata = {
     template: `%s | ${siteName}`,
   },
   description: siteDesc,
+  icons: {
+    icon: '/clearchoice-logo.svg',
+    apple: '/clearchoice-logo.svg',
+  },
   openGraph: {
     type: 'website',
     url: siteUrl,
     siteName,
     title: siteName,
     description: siteDesc,
-    images: ['/og.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteName,
     description: siteDesc,
-    images: ['/og.jpg'],
   },
   alternates: { canonical: '/' },
 }
