@@ -10,7 +10,7 @@ export default function AtmSafetyThankYou() {
       </p>
 
       <TrackDownload
-        href="/guides/atm-safety.pdf"
+        href="/guides/atm-safety-checklist.pdf"
         eventLabel="ATM Safety Checklist PDF"
         className="bg-[#ff4f00] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#e04400] transition inline-block"
       >

@@ -10,7 +10,7 @@ export default function MaintenanceThankYou() {
       </p>
 
       <TrackDownload
-        href="/guides/maintenance-before-support.pdf"
+        href="/guides/atm-maintenance-checklist.pdf"
         eventLabel="Maintenance Checklist PDF"
         className="bg-[#ff4f00] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#e04400] transition inline-block"
       >

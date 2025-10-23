@@ -9,7 +9,7 @@ export default function MerchantComplianceThankYou() {
         Your guide is ready! Click below to download your free Merchant Compliance PDF.
       </p>
       <TrackDownload
-        href="/guides/merchant-compliance.pdf"
+        href="/guides/atm-launch-checklist.pdf"
         eventLabel="Merchant Compliance Guide PDF"
         className="bg-[#ff4f00] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#e04400] transition inline-block"
       >
