@@ -284,7 +284,7 @@ export default function HomeClient() {
                 transition={{ duration: 1.4, ease: 'easeInOut' }}
               >
                 <Image
-                  src="/images/POS.png"
+                  src="/images/pos.png"
                   alt="POS terminal"
                   width={640}
                   height={1000}
@@ -308,7 +308,7 @@ export default function HomeClient() {
                 transition={{ duration: 1.4, ease: 'easeInOut' }}
               >
                 <Image
-                  src="/images/POS.png"
+                  src="/images/pos.png"
                   alt="POS terminal"
                   width={640}
                   height={1000}

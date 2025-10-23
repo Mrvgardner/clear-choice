@@ -9,7 +9,7 @@ type Device = 'ATM' | 'kiosk' | 'POS'
 const DEVICE_SRC: Record<Device, string> = {
   ATM:   '/images/ATM.png',   // case-sensitive as you requested
   kiosk: '/images/kiosk.png',
-  POS:   '/images/POS.png',
+  POS:   '/images/pos.png',
 }
 
 const FADE = 0.6
