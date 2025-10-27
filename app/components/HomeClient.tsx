@@ -459,7 +459,7 @@ export default function HomeClient() {
                   <Icon as={Shield} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[#002b5e] font-heading normal-case">Stability & Compliance</h3>
-                <p className="text-black/70 leading-relaxed">Fewer surprise drops and better dispute outcomes.</p>
+                <p className="text-black/70 leading-relaxed">Keep your network running with 99.999% uptime and fewer surprises.</p>
               </article>
             </RevealCard>
 
