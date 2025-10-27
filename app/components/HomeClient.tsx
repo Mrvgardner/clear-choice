@@ -337,8 +337,7 @@ export default function HomeClient() {
         <div className="pl-4 md:pl-8 lg:pl-12 xl:pl-0">
           <h2 className="text-3xl font-bold mb-4 uppercase font-switch">WE'RE CLEAR CHOICE — AND WE'VE GOT YOUR BACK</h2>
           <p className="max-w-3xl mx-auto text-lg text-white/90">
-            With decades of experience and thousands of successful placements, we help businesses take control of their
-            processing and grow with confidence.
+            With decades of experience and thousands of successful ATM, POS & Kiosk placements, we help businesses take control of their transaction processing and grow revenue with confidence.
           </p>
         </div>
       </section>
