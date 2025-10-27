@@ -469,7 +469,7 @@ export default function HomeClient() {
                   <Icon as={Smile} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[#002b5e] font-heading normal-case">Happier Customers</h3>
-                <p className="text-black/70 leading-relaxed">Shorter queues, clear UX, and faster checkouts.</p>
+                <p className="text-black/70 leading-relaxed">Serve people faster and make every interaction easier.</p>
               </article>
             </RevealCard>
           </div>
