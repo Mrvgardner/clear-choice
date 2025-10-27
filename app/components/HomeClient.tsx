@@ -449,7 +449,7 @@ export default function HomeClient() {
                   <Icon as={TrendingUp} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[#002b5e] font-heading normal-case">More Revenue</h3>
-                <p className="text-black/70 leading-relaxed">Unlock new fee lines and higher throughput.</p>
+                <p className="text-black/70 leading-relaxed">Earn more from every transaction and keep your ATMs busier.</p>
               </article>
             </RevealCard>
 
