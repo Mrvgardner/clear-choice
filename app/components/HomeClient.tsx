@@ -393,8 +393,8 @@ export default function HomeClient() {
           >
             <h2 className="text-4xl font-extrabold mb-4 uppercase font-switch">Build your custom payment solution</h2>
             <p className="text-lg text-white/90 mb-6">
-              Forget one‑size‑fits‑all “solutions.” We help you snap together the right building blocks—ATM, merchant
-              services, kiosks, security, cash management, and more—into a scalable system that practically runs itself.
+              Forget one‑size‑fits‑all "solutions." We help you snap together the right building blocks—<strong>ATM, merchant
+              services, kiosks, security, cash management, and more</strong>—into a scalable system that practically runs itself.
             </p>
             <ul className="text-left text-base text-white space-y-2 list-disc pl-5 marker:text-white/70">
               <li>Start with the outcome you want</li>
