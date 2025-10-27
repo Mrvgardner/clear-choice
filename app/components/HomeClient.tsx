@@ -518,6 +518,7 @@ export default function HomeClient() {
       <section className="bg-[#ff4f00] text-white px-6 py-20 text-center">
         <div className="pl-4 md:pl-8 lg:pl-12 xl:pl-0">
           <h2 className="text-3xl font-extrabold mb-4 uppercase font-switch">LET'S TALK ABOUT YOUR BUSINESS GOALS</h2>
+          <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">And how the right payment solutions can help.</p>
           <a
             href="#contact"
             className="inline-block bg-white text-[#ff4f00] font-bold py-3 px-6 rounded-lg shadow hover:scale-105 transition uppercase"
