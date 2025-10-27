@@ -398,7 +398,7 @@ export default function HomeClient() {
             </p>
             <ul className="text-left text-base text-white space-y-2 list-disc pl-5 marker:text-white/70">
               <li>Start with the outcome you want</li>
-              <li>Add only the blocks you need</li>
+              <li>Add only the parts you need</li>
               <li>Launch and keep scaling</li>
             </ul>
             <a
