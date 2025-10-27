@@ -365,7 +365,7 @@ export default function HomeClient() {
                   <Icon as={Compass} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[#002b5e] font-heading normal-case">Get Your Custom Strategy</h3>
-                <p className="text-black/70 leading-relaxed">We'll recommend the right tools for your business.</p>
+                <p className="text-black/70 leading-relaxed">We'll recommend the right solutions for your business.</p>
               </article>
             </RevealCard>
 
