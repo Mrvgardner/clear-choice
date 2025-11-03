@@ -11,6 +11,7 @@ export interface Post {
   excerpt?: string
   tags?: string[]
   author?: string
+  image?: string
   content: string
 }
 
@@ -36,6 +37,7 @@ export function getAllPosts(): Post[] {
         excerpt: data.excerpt || '',
         tags: data.tags || [],
         author: data.author || undefined,
+        image: data.image || undefined,
       } as Post
     })
 
@@ -61,6 +63,7 @@ export function getPostBySlug(slug: string): Post | null {
     excerpt: data.excerpt || '',
     tags: data.tags || [],
     author: data.author || undefined,
+    image: data.image || undefined,
   } as Post
 }
 
