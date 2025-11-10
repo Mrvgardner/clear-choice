@@ -78,7 +78,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           
           <div className="text-sm text-gray-500 mb-4 flex items-center gap-2">
             <span>
-              {new Date(post.date).toLocaleDateString('en-US', {
+              {new Date(post.date + 'T12:00:00').toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'

@@ -6,7 +6,18 @@ export default function BlogPage({
 }: {
   searchParams?: { tag?: string }
 }) {
-  const posts = getAllPosts()
+  const allPosts = getAllPosts()
+  
+  // Filter out future posts (only show posts with date <= today)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  
+  const posts = allPosts.filter(post => {
+    if (!post.date) return true // Show posts without dates
+    const postDate = new Date(post.date + 'T00:00:00')
+    return postDate <= today
+  })
+  
   const selectedTag = searchParams?.tag
 
   // Collect unique tags across all posts

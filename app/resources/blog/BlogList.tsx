@@ -68,7 +68,7 @@ export default function BlogList({ posts, allTags, selectedTag }: BlogListProps)
                       src={post.image}
                       alt={post.title}
                       fill
-                      className="object-cover"
+                      className="object-cover object-[center_35%]"
                     />
                   </div>
                 )}
@@ -78,7 +78,7 @@ export default function BlogList({ posts, allTags, selectedTag }: BlogListProps)
                   </h2>
                   {post.date && (
                     <time className="text-sm text-gray-500 mb-3 block">
-                      {new Date(post.date).toLocaleDateString('en-US', {
+                      {new Date(post.date + 'T12:00:00').toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
