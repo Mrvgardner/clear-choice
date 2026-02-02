@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import BlogFilter from './BlogFilter'
 
 type Post = {
@@ -10,6 +11,7 @@ type Post = {
   excerpt?: string
   date?: string
   tags?: string[]
+  image?: string
 }
 
 type BlogListProps = {
@@ -59,13 +61,24 @@ export default function BlogList({ posts, allTags, selectedTag }: BlogListProps)
               href={`/resources/blog/${post.slug}`}
               className="block group"
             >
-              <article className="border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:border-[#ff4f00]/40 transition-all duration-200">
+              <article className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-[#ff4f00]/40 transition-all duration-200">
+                {post.image && (
+                  <div className="relative w-full h-64 bg-gray-100">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover object-[center_35%]"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
                 <h2 className="text-2xl font-bold mb-2 group-hover:text-[#ff4f00] transition-colors">
                   {post.title}
                 </h2>
                 {post.date && (
                   <time className="text-sm text-gray-500 mb-3 block">
-                    {new Date(post.date).toLocaleDateString('en-US', {
+                    {new Date(post.date + 'T12:00:00').toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric'
@@ -93,6 +106,7 @@ export default function BlogList({ posts, allTags, selectedTag }: BlogListProps)
                   Read More
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </span>
+                </div>
               </article>
             </Link>
           ))}
