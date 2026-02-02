@@ -284,7 +284,7 @@ export default function HomeClient() {
                 transition={{ duration: 1.4, ease: 'easeInOut' }}
               >
                 <Image
-                  src="/images/pos.png"
+                  src="/images/POS.png"
                   alt="POS terminal"
                   width={640}
                   height={1000}
@@ -308,7 +308,7 @@ export default function HomeClient() {
                 transition={{ duration: 1.4, ease: 'easeInOut' }}
               >
                 <Image
-                  src="/images/pos.png"
+                  src="/images/POS.png"
                   alt="POS terminal"
                   width={640}
                   height={1000}
@@ -337,7 +337,8 @@ export default function HomeClient() {
         <div className="pl-4 md:pl-8 lg:pl-12 xl:pl-0">
           <h2 className="text-3xl font-bold mb-4 uppercase font-switch">WE'RE CLEAR CHOICE — AND WE'VE GOT YOUR BACK</h2>
           <p className="max-w-3xl mx-auto text-lg text-white/90">
-            With decades of experience and thousands of successful ATM, POS & Kiosk placements, we help businesses take control of their transaction processing and grow revenue with confidence.
+            With decades of experience and thousands of successful placements, we help businesses take control of their
+            processing and grow with confidence.
           </p>
         </div>
       </section>
@@ -365,7 +366,7 @@ export default function HomeClient() {
                   <Icon as={Compass} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[#002b5e] font-heading normal-case">Get Your Custom Strategy</h3>
-                <p className="text-black/70 leading-relaxed">We'll recommend the right solutions for your business.</p>
+                <p className="text-black/70 leading-relaxed">We'll recommend the right tools for your business.</p>
               </article>
             </RevealCard>
 
@@ -393,12 +394,12 @@ export default function HomeClient() {
           >
             <h2 className="text-4xl font-extrabold mb-4 uppercase font-switch">Build your custom payment solution</h2>
             <p className="text-lg text-white/90 mb-6">
-              Forget one‑size‑fits‑all "solutions." We help you snap together the right building blocks—<strong>ATM, merchant
-              services, kiosks, security, cash management, and more</strong>—into a scalable system that practically runs itself.
+              Forget one‑size‑fits‑all “solutions.” We help you snap together the right building blocks—ATM, merchant
+              services, kiosks, security, cash management, and more—into a scalable system that practically runs itself.
             </p>
             <ul className="text-left text-base text-white space-y-2 list-disc pl-5 marker:text-white/70">
               <li>Start with the outcome you want</li>
-              <li>Add only the parts you need</li>
+              <li>Add only the blocks you need</li>
               <li>Launch and keep scaling</li>
             </ul>
             <a
@@ -449,7 +450,7 @@ export default function HomeClient() {
                   <Icon as={TrendingUp} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[#002b5e] font-heading normal-case">More Revenue</h3>
-                <p className="text-black/70 leading-relaxed">Earn more from every transaction and keep your ATMs busier.</p>
+                <p className="text-black/70 leading-relaxed">Unlock new fee lines and higher throughput.</p>
               </article>
             </RevealCard>
 
@@ -459,7 +460,7 @@ export default function HomeClient() {
                   <Icon as={Shield} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[#002b5e] font-heading normal-case">Stability & Compliance</h3>
-                <p className="text-black/70 leading-relaxed">Keep your network running with 99.999% uptime and fewer surprises.</p>
+                <p className="text-black/70 leading-relaxed">Fewer surprise drops and better dispute outcomes.</p>
               </article>
             </RevealCard>
 
@@ -469,7 +470,7 @@ export default function HomeClient() {
                   <Icon as={Smile} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-[#002b5e] font-heading normal-case">Happier Customers</h3>
-                <p className="text-black/70 leading-relaxed">Serve people faster and make every interaction easier.</p>
+                <p className="text-black/70 leading-relaxed">Shorter queues, clear UX, and faster checkouts.</p>
               </article>
             </RevealCard>
           </div>
@@ -518,7 +519,6 @@ export default function HomeClient() {
       <section className="bg-[#ff4f00] text-white px-6 py-20 text-center">
         <div className="pl-4 md:pl-8 lg:pl-12 xl:pl-0">
           <h2 className="text-3xl font-extrabold mb-4 uppercase font-switch">LET'S TALK ABOUT YOUR BUSINESS GOALS</h2>
-          <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">And how the right payment solutions can help.</p>
           <a
             href="#contact"
             className="inline-block bg-white text-[#ff4f00] font-bold py-3 px-6 rounded-lg shadow hover:scale-105 transition uppercase"

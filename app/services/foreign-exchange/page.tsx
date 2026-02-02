@@ -19,8 +19,9 @@ export default function ForeignExchange() {
         <p className="mt-4 text-lead text-gray-600 max-w-2xl">
           Competitive currency exchange with transparent rates and fast processing.
         </p>
-        <div className="mt-8">
+        <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
+          <Button href="/resources/fx-rates" variant="secondary">View Current Rates</Button>
         </div>
       </section>
 

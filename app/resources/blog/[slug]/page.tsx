@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPostBySlug, getAllPostSlugs } from '@/lib/posts'
 import ShareBar from '@/components/ShareBar'
@@ -61,10 +60,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   // Rough reading time at ~200 words/min
   const words = post.content.trim().split(/\s+/).length
   const minutes = Math.max(1, Math.ceil(words / 200))
-  
-  // Get the image from post metadata
-  const anyPost = post as any
-  const heroImage = anyPost.image
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -78,7 +73,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           
           <div className="text-sm text-gray-500 mb-4 flex items-center gap-2">
             <span>
-              {new Date(post.date + 'T12:00:00').toLocaleDateString('en-US', {
+              {new Date(post.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
@@ -105,18 +100,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           )}
         </header>
-        
-        {heroImage && (
-          <div className="relative w-full h-[400px] mb-8 rounded-lg overflow-hidden">
-            <Image
-              src={heroImage}
-              alt={post.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
         
         <div className="prose prose-lg max-w-none">
           <MDXRemote source={post.content} />
