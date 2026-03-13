@@ -94,7 +94,7 @@ export default function FreeResourcePage() {
         }
         .free-resource-page .resource-header .tagline {
           font-family: 'SwitchCommerce', sans-serif;
-          font-weight: 400;
+          font-weight: 700;
           font-size: 13px;
           color: var(--silver);
           letter-spacing: 0.08em;
@@ -120,10 +120,10 @@ export default function FreeResourcePage() {
         .free-resource-page .hero h1 {
           font-family: 'SwitchCommerce', sans-serif;
           font-weight: 700;
-          font-size: clamp(28px, 5vw, 48px);
+          font-size: clamp(36px, 6vw, 64px);
           color: var(--white);
           line-height: 1.15;
-          max-width: 760px;
+          max-width: 900px;
           margin: 0 auto 20px;
           text-transform: uppercase;
         }
