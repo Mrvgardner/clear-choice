@@ -399,11 +399,6 @@ export default function FreeResourcePage() {
       <Script id="activecampaign-config" strategy="afterInteractive">
         {`window.cfields = {"27":"giveaway_keyword","28":"giveaway_topic","29":"giveaway_resource"};`}
       </Script>
-      
-      <Script 
-        src="https://switchcommerce.activehosted.com/f/embed.php?id=1" 
-        strategy="afterInteractive"
-      />
     </>
   );
 }
