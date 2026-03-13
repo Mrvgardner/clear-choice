@@ -2,9 +2,10 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  // You can add custom middleware logic here
-  // For now, just continue with the request
-  return NextResponse.next()
+  // Add pathname to headers so layouts can access it
+  const response = NextResponse.next()
+  response.headers.set('x-pathname', request.nextUrl.pathname)
+  return response
 }
 
 export const config = {

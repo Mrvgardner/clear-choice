@@ -5,6 +5,7 @@ import SeoJsonLd from '@/components/SeoJsonLd'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
+import { headers } from 'next/headers'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 const siteName = 'Clear Choice Payment Solutions'
@@ -36,6 +37,12 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = headers()
+  const pathname = headersList.get('x-pathname') || ''
+  
+  // Check if this is the free-resource page (standalone page)
+  const isStandalonePage = pathname.includes('/free-resource')
+
   return (
     <html lang="en">
       <head>
@@ -66,10 +73,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body className="min-h-screen flex flex-col bg-white text-gray-900">
-        <Header />
+        {!isStandalonePage && <Header />}
         <div className="flex-1">{children}</div>
-        <Footer />
-        <SeoJsonLd />
+        {!isStandalonePage && <Footer />}
+        {!isStandalonePage && <SeoJsonLd />}
         {/* belt-and-suspenders: ensure no lingering dark mode */}
         <script dangerouslySetInnerHTML={{ __html: `try{document.documentElement.classList.remove('dark');localStorage.removeItem('theme')}catch(e){}` }} />
       </body>
