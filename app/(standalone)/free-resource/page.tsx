@@ -9,6 +9,7 @@ export default function FreeResourcePage() {
   const resource = searchParams.get('resource') || 'Resource Guide';
   const keyword = searchParams.get('keyword') || '';
   const topic = searchParams.get('topic') || '';
+  const pdfUrl = searchParams.get('pdf_url') || '';
 
   useEffect(() => {
     // Populate dynamic text elements
@@ -29,11 +30,13 @@ export default function FreeResourcePage() {
     const field27 = document.getElementById('field[27]') as HTMLInputElement;
     const field28 = document.getElementById('field[28]') as HTMLInputElement;
     const field29 = document.getElementById('field[29]') as HTMLInputElement;
+    const field30 = document.getElementById('field[30]') as HTMLInputElement;
 
     if (field27) field27.value = keyword;
     if (field28) field28.value = topic;
     if (field29) field29.value = resource;
-  }, [resource, keyword, topic]);
+    if (field30) field30.value = pdfUrl;
+  }, [resource, keyword, topic, pdfUrl]);
 
   return (
     <>
@@ -363,6 +366,7 @@ export default function FreeResourcePage() {
                 <input type="hidden" id="field[27]" name="field[27]" value="" />
                 <input type="hidden" id="field[28]" name="field[28]" value="" />
                 <input type="hidden" id="field[29]" name="field[29]" value="" />
+                <input type="hidden" id="field[30]" name="field[30]" value="" />
 
                 {/* Submit */}
                 <div className="_button-wrapper _full_width">
@@ -397,7 +401,7 @@ export default function FreeResourcePage() {
 
       {/* ActiveCampaign Form Script */}
       <Script id="activecampaign-config" strategy="afterInteractive">
-        {`window.cfields = {"27":"giveaway_keyword","28":"giveaway_topic","29":"giveaway_resource"};`}
+        {`window.cfields = {"27":"giveaway_keyword","28":"giveaway_topic","29":"giveaway_resource","30":"giveaway_pdf_url"};`}
       </Script>
     </>
   );
