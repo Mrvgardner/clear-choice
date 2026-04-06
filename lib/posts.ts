@@ -41,8 +41,11 @@ export function getAllPosts(): Post[] {
       } as Post
     })
 
-  // Sort posts by date
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
+  // Filter out future-dated posts and sort by date descending
+  const today = new Date().toISOString().split('T')[0]
+  return allPostsData
+    .filter((post) => post.date.substring(0, 10) <= today)
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
 export function getPostBySlug(slug: string): Post | null {
