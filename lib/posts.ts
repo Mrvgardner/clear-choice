@@ -42,9 +42,9 @@ export function getAllPosts(): Post[] {
     })
 
   // Filter out future-dated posts and sort by date descending
-  const today = new Date().toISOString().split('T')[0]
+  const now = Date.now()
   return allPostsData
-    .filter((post) => post.date.substring(0, 10) <= today)
+    .filter((post) => new Date(post.date).getTime() <= now)
     .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
