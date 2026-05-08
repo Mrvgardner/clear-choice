@@ -1,6 +1,13 @@
 export default function robots() {
   return {
-    rules: [{ userAgent: '*', allow: '/' }],
+    rules: [
+      { userAgent: '*', allow: '/' },
+      { userAgent: 'OAI-SearchBot', allow: '/' },
+      { userAgent: 'ChatGPT-User', allow: '/' },
+      { userAgent: 'Claude-SearchBot', allow: '/' },
+      { userAgent: 'Claude-User', allow: '/' },
+    ],
     sitemap: 'https://clearchoicepay.com/sitemap.xml',
+    host: 'https://clearchoicepay.com',
   }
 }

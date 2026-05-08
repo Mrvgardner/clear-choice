@@ -1,25 +1,30 @@
 export default function SeoJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://clearchoicepay.com'
+  const normalizedSiteUrl = siteUrl.replace(/\/$/, '')
 
   const org = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${normalizedSiteUrl}/#organization`,
     name: 'Clear Choice Payment Solutions',
-    url: siteUrl,
-    logo: `${siteUrl.replace(/\/$/, '')}/brand/clearchoice-logo.svg`,
+    url: normalizedSiteUrl,
+    logo: `${normalizedSiteUrl}/brand/clearchoice-logo.svg`,
     parentOrganization: { '@type': 'Organization', name: 'Switch Commerce' },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      areaServed: 'US',
+      availableLanguage: 'en',
+    },
   }
 
   const website = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${normalizedSiteUrl}/#website`,
     name: 'Clear Choice Payment Solutions',
-    url: siteUrl,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${siteUrl.replace(/\/$/, '')}/search?q={query}`,
-      'query-input': 'required name=query',
-    },
+    url: normalizedSiteUrl,
+    publisher: { '@id': `${normalizedSiteUrl}/#organization` },
   }
 
   return (

@@ -104,7 +104,6 @@ export default function HomeClient() {
     const timer = setInterval(() => {
       setHeroIndex((i) => {
         const next = (i + 1) % 3;
-        console.log('Hero index changing from', i, 'to', next);
         return next;
       });
     }, 8000); // 8 seconds per requirement
@@ -117,10 +116,9 @@ export default function HomeClient() {
       <section className="relative overflow-visible text-white">
         <div className="clip-hero-angle relative px-6 pt-32 pb-28 md:pb-44 min-h-[520px]">
           {/* Background slideshow images */}
-          {/* Static CSS background fallback fixed to the first scene to avoid pops */}
+          {/* Solid fallback while the optimized hero image loads. */}
           <div
-            className="absolute inset-0 z-[1] bg-center bg-cover"
-            style={{ backgroundImage: 'url(/images/airport.jpg)', filter: 'brightness(0.72)' }}
+            className="absolute inset-0 z-[1] bg-[#001a38]"
             aria-hidden
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#001a38]/70 via-[#001a38]/40 md:via-[#001a38]/55 to-transparent" />
@@ -151,7 +149,8 @@ export default function HomeClient() {
                     src={scene.bg}
                     alt={scene.bgAlt}
                     fill
-                    priority
+                    priority={i === 0}
+                    sizes="100vw"
                     className="object-cover object-center md:object-center brightness-[0.8] md:brightness-[0.72]"
                     style={{ objectPosition: 'center 40%' }}
                   />
@@ -239,7 +238,6 @@ export default function HomeClient() {
                   width={640}
                   height={1000}
                   className="block w-full h-auto drop-shadow-xl"
-                  priority
                 />
               </div>
             </motion.div>
@@ -264,7 +262,6 @@ export default function HomeClient() {
                   width={640}
                   height={1000}
                   className="block w-full h-auto drop-shadow-xl"
-                  priority
                 />
               </div>
             </motion.div>
@@ -289,7 +286,6 @@ export default function HomeClient() {
                   width={640}
                   height={1000}
                   className="block w-full h-auto drop-shadow-xl"
-                  priority
                 />
               </motion.div>
             )}
@@ -313,7 +309,6 @@ export default function HomeClient() {
                   width={640}
                   height={1000}
                   className="block w-full h-auto drop-shadow-xl"
-                  priority
                 />
               </motion.div>
             )}

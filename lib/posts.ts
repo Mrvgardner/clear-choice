@@ -12,6 +12,10 @@ export interface Post {
   tags?: string[]
   author?: string
   image?: string
+  metaTitle?: string
+  metaDescription?: string
+  keywords?: string[]
+  ogImage?: string
   content: string
 }
 
@@ -30,6 +34,7 @@ export function getAllPosts(): Post[] {
       const { data, content } = matter(fileContents)
 
       return {
+        ...data,
         slug,
         content,
         title: data.title || slug,
@@ -59,6 +64,7 @@ export function getPostBySlug(slug: string): Post | null {
   const { data, content } = matter(fileContents)
 
   return {
+    ...data,
     slug,
     content,
     title: data.title || slug,

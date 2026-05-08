@@ -11,6 +11,37 @@ interface BlogPostPageProps {
   }
 }
 
+function BlogArticleJsonLd({ post, minutes }: { post: NonNullable<ReturnType<typeof getPostBySlug>>, minutes: number }) {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://clearchoicepay.com').replace(/\/$/, '')
+  const anyPost = post as any
+  const image = anyPost.ogImage || post.image || `${siteUrl}/images/og/blog-default.png`
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: anyPost.metaDescription || post.excerpt || undefined,
+    image,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author || 'Victor Gardner, Jr.',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Clear Choice Payment Solutions',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/brand/clearchoice-logo.svg`,
+      },
+    },
+    mainEntityOfPage: `${siteUrl}/resources/blog/${post.slug}`,
+    timeRequired: `PT${minutes}M`,
+  }
+
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+}
+
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs()
   return slugs.map((slug) => ({
@@ -122,6 +153,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <MDXRemote source={post.content} />
         </div>
       </article>
+      <BlogArticleJsonLd post={post} minutes={minutes} />
     </div>
   )
 }

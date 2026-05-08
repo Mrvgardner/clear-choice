@@ -40,3 +40,6 @@ next-env.d.ts
 
 # giveaway reference files
 app/giveaway/
+
+# Local Netlify folder
+.netlify

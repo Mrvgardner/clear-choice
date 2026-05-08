@@ -13,6 +13,10 @@ export const metadata = {
   title: 'Thank You',
   description: 'We received your message and will get back to you shortly.',
   alternates: { canonical: '/thank-you' },
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function ThankYouPage({ searchParams }: { searchParams?: { asset?: string } }) {

@@ -1,0 +1,32 @@
+# Clear Choice Payment Solutions
+
+Clear Choice Payment Solutions helps businesses build stable payment systems with merchant services, ATM placement, Watchdog monitoring, kiosks, foreign exchange ATMs, and affiliate program options.
+
+## Primary Pages
+
+- Home: https://clearchoicepay.com/
+- Services: https://clearchoicepay.com/services
+- Merchant Services: https://clearchoicepay.com/services/merchant-services
+- ATM Placement: https://clearchoicepay.com/services/atm-placement
+- Watchdog: https://clearchoicepay.com/services/watchdog
+- Kiosks: https://clearchoicepay.com/services/kiosks
+- Foreign Exchange: https://clearchoicepay.com/services/foreign-exchange
+- Affiliate Program: https://clearchoicepay.com/services/affiliate-program
+- Industries: https://clearchoicepay.com/industries
+- Resources: https://clearchoicepay.com/resources
+- Blog: https://clearchoicepay.com/resources/blog
+- Contact: https://clearchoicepay.com/contact
+
+## Topics
+
+- Payment processing stability
+- High-risk merchant processing
+- ATM uptime and monitoring
+- ATM placement and cash management
+- Kiosk and POS payment strategy
+- Foreign exchange ATM programs
+- Affiliate payment revenue programs
+
+## Crawl Policy
+
+The site allows search and answer-engine crawlers in robots.txt, including OAI-SearchBot and Claude-SearchBot.
