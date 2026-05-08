@@ -6,6 +6,8 @@ import FeatureBanner from '@/components/FeatureBanner'
 import Section from '@/components/Section'
 import ResourceBanner from '@/components/ResourceBanner'
 import Link from 'next/link'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ResourceJsonLd from '@/components/ResourceJsonLd'
 
 export async function generateStaticParams() {
   return listDocs('case-studies').map((d) => ({ slug: d.slug }))
@@ -21,21 +23,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-function ArticleJsonLd({ meta }: { meta: any }) {
-  const data = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: meta.title,
-    datePublished: meta.date || undefined,
-    description: meta.description || '',
-    author: { '@type': 'Organization', name: 'Clear Choice Payment Solutions' },
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
-}
-
 export default function CaseStudy({ params }: { params: { slug: string } }) {
   const doc = readDoc('case-studies', params.slug)
   if (!doc) return notFound()
+  const meta = doc.meta
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
@@ -69,7 +60,29 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         label="Book a Free Demo"
         className="mt-12"
       />
-      <ArticleJsonLd meta={doc.meta} />
+      <ResourceJsonLd
+        type="Article"
+        title={meta.title}
+        description={meta.description}
+        url={`/resources/case-studies/${meta.slug}`}
+        datePublished={meta.date}
+        genre="Case study"
+        keywords={[meta.product, meta.industry, ...(meta.metrics || [])].filter(Boolean)}
+        about={[meta.product, meta.industry, ...(meta.metrics || [])].filter(Boolean)}
+        audience={['Business owners', 'Payment operators', 'Retail and convenience operators']}
+        isPartOf={{ name: 'Case Studies', url: '/resources/case-studies' }}
+        action={{
+          type: 'RegisterAction',
+          name: 'Book a demo',
+          target: '/book-demo',
+        }}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Case Studies', url: '/resources/case-studies' },
+        { name: meta.title },
+      ]}/>
     </main>
   )
 }

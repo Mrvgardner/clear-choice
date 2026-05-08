@@ -2,12 +2,33 @@
 import Button from '@/components/Button'
 import ServiceJsonLd from '@/components/ServiceJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ServiceFaq, { ServiceFaqJsonLd } from '@/components/ServiceFaq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Affiliate Program',
   description: 'Start an ISO‑style business with training, compliance, and support.',
   alternates: { canonical: '/services/affiliate-program' },
+}
+
+const faqs = [
+  {
+    q: 'Who is the Clear Choice affiliate program for?',
+    a: 'The affiliate program is for partners and entrepreneurs who want recurring revenue opportunities in payments or ATMs without taking on traditional ISO overhead alone.',
+  },
+  {
+    q: 'Does Clear Choice provide affiliate training?',
+    a: 'Yes. The program is built around training, compliance support, partner tools, and ongoing account support so affiliates have a clearer path to growth.',
+  },
+  {
+    q: 'What can affiliates offer through Clear Choice?',
+    a: 'Affiliates can connect businesses with Clear Choice payment and ATM solutions, including merchant services, ATM placement, monitoring, kiosks, and related support.',
+  },
+]
+
+const testimonial = {
+  body: 'Clear Choice made ISO partnership simple. Great training, ongoing support, and steady recurring revenue.',
+  author: 'Clear Choice Affiliate',
 }
 
 export default function AffiliateProgram() {
@@ -21,7 +42,7 @@ export default function AffiliateProgram() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/highriskpartners" variant="secondary">Explore Partner Program</Button>
+          <Button href="/solutions/affiliate-payment-partner-program" variant="secondary">Partner Growth Strategy</Button>
         </div>
       </section>
 
@@ -66,8 +87,8 @@ export default function AffiliateProgram() {
       <section className="section">
         <h2 className="text-2xl font-semibold">Who says?</h2>
         <blockquote className="mt-4 border-l-4 border-brand pl-4 text-gray-700 max-w-3xl">
-          "Clear Choice made ISO partnership simple. Great training, ongoing support, and steady recurring revenue."
-          <footer className="mt-3 text-sm text-gray-500">— Partner Name, Clear Choice Affiliate</footer>
+          "{testimonial.body}"
+          <footer className="mt-3 text-sm text-gray-500">— {testimonial.author}</footer>
         </blockquote>
       </section>
 
@@ -82,10 +103,21 @@ export default function AffiliateProgram() {
           </div>
         </div>
       </section>
+      <ServiceFaq items={faqs} />
+      <ServiceFaqJsonLd items={faqs} />
       <ServiceJsonLd
         name="Affiliate Program"
         description="Start an ISO‑style business with training, compliance, and support."
         url="https://clearchoicepay.com/services/affiliate-program"
+        serviceType="Payment and ATM affiliate program"
+        category="Partner program"
+        audience={['Affiliate partners', 'ISO-style payment partners', 'Entrepreneurs entering the ATM industry']}
+        related={[
+          { name: 'Affiliate Payment Partner Growth Strategy', url: '/solutions/affiliate-payment-partner-program' },
+          { name: 'High Risk Partners', url: '/highriskpartners' },
+          { name: 'Book a Demo', url: '/book-demo' },
+        ]}
+        reviews={[testimonial]}
       />
       <BreadcrumbJsonLd items={[
         { name: 'Home', url: 'https://clearchoicepay.com/' },

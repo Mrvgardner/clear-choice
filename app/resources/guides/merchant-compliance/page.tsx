@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import GAWebToLead from '@/components/GAWebToLead'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ResourceJsonLd from '@/components/ResourceJsonLd'
 
 export const metadata: Metadata = {
   title: 'Merchant Compliance Guide',
@@ -65,6 +67,26 @@ export default function MerchantComplianceGuide() {
           Get the Guide →
         </button>
       </GAWebToLead>
+      <ResourceJsonLd
+        type="DigitalDocument"
+        title="Merchant Compliance Guide"
+        description="A free guide to help merchants avoid hidden fees, chargebacks, compliance pitfalls, and account freezes."
+        url="/resources/guides/merchant-compliance"
+        genre="Guide"
+        about={['Merchant compliance', 'Payment processing', 'Chargeback support', 'High-risk merchant services']}
+        audience={['Retail merchants', 'High-risk merchants', 'Business owners reviewing payment processing']}
+        action={{
+          type: 'RegisterAction',
+          name: 'Request the Merchant Compliance Guide',
+          target: '/resources/guides/merchant-compliance',
+        }}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Guides', url: '/resources/library' },
+        { name: 'Merchant Compliance Guide' },
+      ]}/>
     </main>
   )
 }

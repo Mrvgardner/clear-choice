@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import SalesforceLeadForm from '@/components/SalesforceLeadForm'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ResourceJsonLd from '@/components/ResourceJsonLd'
 
 // Define library assets here.
 // - slug MUST match the route (e.g., /resources/library/atm-launch-checklist)
@@ -89,6 +91,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `${asset.title} | Resource Library`,
     description: asset.summary.slice(0, 150),
+    alternates: { canonical: `/resources/library/${asset.slug}` },
   }
 }
 
@@ -165,6 +168,28 @@ export default function LibraryAssetPage({ params }: { params: { slug: string } 
           Book a Free Demo Now
         </a>
       </section>
+      <ResourceJsonLd
+        type="DigitalDocument"
+        title={asset.title}
+        description={asset.summary}
+        url={`/resources/library/${asset.slug}`}
+        image={asset.cover}
+        genre={asset.badge ?? 'Guide'}
+        about={[asset.badge ?? 'Guide', ...asset.bullets]}
+        audience={['Business owners', 'ATM operators', 'Payment and retail operators']}
+        isPartOf={{ name: 'Resource Library', url: '/resources/library' }}
+        action={{
+          type: 'RegisterAction',
+          name: `Request ${asset.title}`,
+          target: `/resources/library/${asset.slug}`,
+        }}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Library', url: '/resources/library' },
+        { name: asset.title },
+      ]}/>
     </main>
   )
 }

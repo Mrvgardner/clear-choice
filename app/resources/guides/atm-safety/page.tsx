@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import GAWebToLead from '@/components/GAWebToLead'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ResourceJsonLd from '@/components/ResourceJsonLd'
 
 export const metadata: Metadata = {
   title: 'ATM Safety Best Practices',
@@ -42,6 +44,26 @@ export default function AtmSafetyGuide() {
           Get the Checklist →
         </button>
       </GAWebToLead>
+      <ResourceJsonLd
+        type="DigitalDocument"
+        title="ATM Safety Best Practices"
+        description="A printable ATM safety checklist for reducing tampering, skimming, jackpotting, and site risk."
+        url="/resources/guides/atm-safety"
+        genre="Checklist"
+        about={['ATM safety', 'ATM security', 'Skimming prevention', 'Jackpotting risk']}
+        audience={['ATM operators', 'Convenience stores', 'Retail locations with ATMs']}
+        action={{
+          type: 'RegisterAction',
+          name: 'Request the ATM Safety Checklist',
+          target: '/resources/guides/atm-safety',
+        }}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Guides', url: '/resources/library' },
+        { name: 'ATM Safety Best Practices' },
+      ]}/>
     </main>
   )
 }

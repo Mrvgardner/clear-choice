@@ -21,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/kiosks',
     '/industries',
     '/solutions',
+    '/solutions/watchdog-atm-monitoring',
+    '/solutions/merchant-payment-stability',
+    '/solutions/affiliate-payment-partner-program',
     '/about',
     '/about/company',
     '/about/press',
@@ -39,6 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/book-demo',
     '/terms',
+    '/llms.txt',
+    '/llms-full.txt',
   ]
   const libraryRoutes = [
     '/resources/library/atm-launch-checklist',

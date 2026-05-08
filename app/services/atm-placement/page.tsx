@@ -1,11 +1,34 @@
 // app/services/atm-placement/page.tsx
 import Button from '@/components/Button'
+import ServiceJsonLd from '@/components/ServiceJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ServiceFaq, { ServiceFaqJsonLd } from '@/components/ServiceFaq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ATM Placement',
   description: 'Hands-off ATM placement that generates new revenue streams with high uptime and full servicing.',
   alternates: { canonical: '/services/atm-placement' },
+}
+
+const faqs = [
+  {
+    q: 'What does hands-off ATM placement include?',
+    a: 'Hands-off ATM placement can include location evaluation, installation coordination, servicing, monitoring, and cash-management support depending on the program fit.',
+  },
+  {
+    q: 'How does an ATM placement generate revenue?',
+    a: 'ATM placement creates revenue through transaction activity and transparent revenue-share arrangements for qualified locations.',
+  },
+  {
+    q: 'What types of locations are good fits for ATM placement?',
+    a: 'Convenience stores, retail locations, hospitality venues, and businesses with steady customer traffic are often strong candidates for ATM placement.',
+  },
+]
+
+const testimonial = {
+  body: "Our ATM is always working and generating revenue. Clear Choice handles everything so we don't have to.",
+  author: 'Business Owner',
 }
 
 export default function ATMPlacement() {
@@ -64,8 +87,8 @@ export default function ATMPlacement() {
       <section className="section">
         <h2 className="text-2xl font-semibold">Who says?</h2>
         <blockquote className="mt-4 border-l-4 border-brand pl-4 text-gray-700 max-w-3xl">
-          "Our ATM is always working and generating revenue. Clear Choice handles everything so we don't have to."
-          <footer className="mt-3 text-sm text-gray-500">— Business Owner, Retail Location</footer>
+          "{testimonial.body}"
+          <footer className="mt-3 text-sm text-gray-500">— {testimonial.author}, Retail Location</footer>
         </blockquote>
       </section>
 
@@ -80,6 +103,26 @@ export default function ATMPlacement() {
           </div>
         </div>
       </section>
+      <ServiceFaq items={faqs} />
+      <ServiceFaqJsonLd items={faqs} />
+      <ServiceJsonLd
+        name="ATM Placement"
+        description="Hands-off ATM placement that generates new revenue streams with high uptime and full servicing."
+        url="https://clearchoicepay.com/services/atm-placement"
+        serviceType="ATM placement and servicing"
+        category="ATM services"
+        audience={['Retail locations', 'Convenience stores', 'Businesses seeking ATM revenue']}
+        related={[
+          { name: 'ATM Launch Checklist', url: '/resources/library/atm-launch-checklist' },
+          { name: 'ATM Safety Checklist', url: '/resources/library/atm-safety-checklist' },
+        ]}
+        reviews={[testimonial]}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Services', url: '/services' },
+        { name: 'ATM Placement' },
+      ]}/>
     </main>
   )
 }

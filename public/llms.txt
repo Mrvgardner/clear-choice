@@ -1,21 +1,38 @@
 # Clear Choice Payment Solutions
 
-Clear Choice Payment Solutions helps businesses build stable payment systems with merchant services, ATM placement, Watchdog monitoring, kiosks, foreign exchange ATMs, and affiliate program options.
+> Clear Choice Payment Solutions is a Switch Commerce company that helps businesses build stable, revenue-focused payment systems.
 
-## Primary Pages
+Clear Choice Payment Solutions serves merchants, ATM operators, retail locations, travel venues, and payment partners with merchant services, ATM placement, Watchdog monitoring, all-in-one kiosks, foreign exchange ATMs, and affiliate program options.
+
+## Key URLs
 
 - Home: https://clearchoicepay.com/
+- About: https://clearchoicepay.com/about
 - Services: https://clearchoicepay.com/services
+- Solutions: https://clearchoicepay.com/solutions
+- ATM Monitoring Strategy: https://clearchoicepay.com/solutions/watchdog-atm-monitoring
+- Merchant Payment Stability: https://clearchoicepay.com/solutions/merchant-payment-stability
+- Affiliate Partner Growth: https://clearchoicepay.com/solutions/affiliate-payment-partner-program
 - Merchant Services: https://clearchoicepay.com/services/merchant-services
 - ATM Placement: https://clearchoicepay.com/services/atm-placement
-- Watchdog: https://clearchoicepay.com/services/watchdog
-- Kiosks: https://clearchoicepay.com/services/kiosks
-- Foreign Exchange: https://clearchoicepay.com/services/foreign-exchange
+- Watchdog Monitoring: https://clearchoicepay.com/services/watchdog
+- All-In-One Kiosks: https://clearchoicepay.com/services/kiosks
+- Foreign Exchange ATMs: https://clearchoicepay.com/services/foreign-exchange
 - Affiliate Program: https://clearchoicepay.com/services/affiliate-program
 - Industries: https://clearchoicepay.com/industries
 - Resources: https://clearchoicepay.com/resources
 - Blog: https://clearchoicepay.com/resources/blog
+- Case Studies: https://clearchoicepay.com/resources/case-studies
+- Library: https://clearchoicepay.com/resources/library
+- FAQs: https://clearchoicepay.com/resources/faqs
 - Contact: https://clearchoicepay.com/contact
+- Book a Demo: https://clearchoicepay.com/book-demo
+
+## Machine-Readable Summary
+
+- Full AI reference: https://clearchoicepay.com/llms-full.txt
+- Sitemap: https://clearchoicepay.com/sitemap.xml
+- Robots policy: https://clearchoicepay.com/robots.txt
 
 ## Topics
 
@@ -26,7 +43,11 @@ Clear Choice Payment Solutions helps businesses build stable payment systems wit
 - Kiosk and POS payment strategy
 - Foreign exchange ATM programs
 - Affiliate payment revenue programs
+- Payment compliance and chargeback support
+- ATM uptime and monitoring strategy
+- Merchant payment stability
+- Affiliate and ISO-style partner growth
 
 ## Crawl Policy
 
-The site allows search and answer-engine crawlers in robots.txt, including OAI-SearchBot and Claude-SearchBot.
+The site allows search and answer-engine crawlers in robots.txt, including OAI-SearchBot, ChatGPT-User, Claude-SearchBot, and Claude-User.

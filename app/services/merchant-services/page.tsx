@@ -2,12 +2,33 @@
 import Button from '@/components/Button'
 import ServiceJsonLd from '@/components/ServiceJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ServiceFaq, { ServiceFaqJsonLd } from '@/components/ServiceFaq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Merchant Services',
   description: 'Lower costs with high‑risk stability and zero surprise drops.',
   alternates: { canonical: '/services/merchant-services' },
+}
+
+const faqs = [
+  {
+    q: 'Can Clear Choice support high-risk merchant processing?',
+    a: 'Yes. Clear Choice works with high-risk and hard-to-place merchant categories by focusing on stable routing, compliance guardrails, and practical chargeback support.',
+  },
+  {
+    q: 'How can merchant services lower my payment costs?',
+    a: 'Clear Choice reviews your processing setup, fee structure, routing, and risk profile to look for avoidable costs and better-fit payment options.',
+  },
+  {
+    q: 'What happens if my current processor drops my account?',
+    a: 'Clear Choice helps evaluate your merchant profile and build a more stable processing path so your business can keep accepting payments with less disruption.',
+  },
+]
+
+const testimonial = {
+  body: 'Clear Choice kept us compliant and processing while others dropped us. Revenue is up and chargebacks are down.',
+  author: 'High-Risk Merchant',
 }
 
 export default function MerchantServices() {
@@ -21,7 +42,7 @@ export default function MerchantServices() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/resources/guides/merchant-compliance" variant="secondary">Download Compliance Guide</Button>
+          <Button href="/solutions/merchant-payment-stability" variant="secondary">Payment Stability Strategy</Button>
         </div>
       </section>
 
@@ -66,8 +87,8 @@ export default function MerchantServices() {
       <section className="section">
         <h2 className="text-2xl font-semibold">Who says?</h2>
         <blockquote className="mt-4 border-l-4 border-brand pl-4 text-gray-700 max-w-3xl">
-          "Clear Choice kept us compliant and processing while others dropped us. Revenue is up and chargebacks are down."
-          <footer className="mt-3 text-sm text-gray-500">— Firstname, Company</footer>
+          "{testimonial.body}"
+          <footer className="mt-3 text-sm text-gray-500">— {testimonial.author}, Retail Business</footer>
         </blockquote>
       </section>
 
@@ -82,10 +103,21 @@ export default function MerchantServices() {
           </div>
         </div>
       </section>
+      <ServiceFaq items={faqs} />
+      <ServiceFaqJsonLd items={faqs} />
       <ServiceJsonLd
         name="Merchant Services"
         description="Lower costs with high‑risk stability and zero surprise drops."
         url="https://clearchoicepay.com/services/merchant-services"
+        serviceType="Payment processing and merchant services"
+        category="Financial services"
+        audience={['Retail merchants', 'High-risk merchants', 'Businesses that need stable payment processing']}
+        related={[
+          { name: 'Merchant Payment Stability Strategy', url: '/solutions/merchant-payment-stability' },
+          { name: 'Merchant Compliance Guide', url: '/resources/guides/merchant-compliance' },
+          { name: 'High Risk Merchants', url: '/highriskmerchants' },
+        ]}
+        reviews={[testimonial]}
       />
       <BreadcrumbJsonLd items={[
         { name: 'Home', url: 'https://clearchoicepay.com/' },

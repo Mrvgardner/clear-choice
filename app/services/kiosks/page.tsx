@@ -1,11 +1,34 @@
 // app/services/kiosks/page.tsx
 import Button from '@/components/Button'
+import ServiceJsonLd from '@/components/ServiceJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ServiceFaq, { ServiceFaqJsonLd } from '@/components/ServiceFaq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Kiosks',
   description: 'Self-service kiosks that reduce wait times, cut staffing costs, and increase customer satisfaction.',
   alternates: { canonical: '/services/kiosks' },
+}
+
+const faqs = [
+  {
+    q: 'What can an all-in-one kiosk help customers do?',
+    a: 'A kiosk can support self-service workflows such as cash access, bill pay, customer transactions, and other convenience services depending on the business model.',
+  },
+  {
+    q: 'How do kiosks help reduce operational pressure?',
+    a: 'Kiosks can shorten lines, shift simple transactions to self-service, and let staff focus on higher-value customer needs.',
+  },
+  {
+    q: 'Can Clear Choice customize a kiosk program?',
+    a: 'Yes. Clear Choice can help match kiosk features to the location, customer traffic, payment needs, and revenue goals of the business.',
+  },
+]
+
+const testimonial = {
+  body: 'Our kiosks handle 60% of transactions now. Wait times are down and our staff can focus on complex customer needs.',
+  author: 'Operations Manager',
 }
 
 export default function Kiosks() {
@@ -64,8 +87,8 @@ export default function Kiosks() {
       <section className="section">
         <h2 className="text-2xl font-semibold">Who says?</h2>
         <blockquote className="mt-4 border-l-4 border-brand pl-4 text-gray-700 max-w-3xl">
-          "Our kiosks handle 60% of transactions now. Wait times are down and our staff can focus on complex customer needs."
-          <footer className="mt-3 text-sm text-gray-500">— Operations Manager, Quick Service Chain</footer>
+          "{testimonial.body}"
+          <footer className="mt-3 text-sm text-gray-500">— {testimonial.author}, Quick Service Chain</footer>
         </blockquote>
       </section>
 
@@ -80,6 +103,26 @@ export default function Kiosks() {
           </div>
         </div>
       </section>
+      <ServiceFaq items={faqs} />
+      <ServiceFaqJsonLd items={faqs} />
+      <ServiceJsonLd
+        name="All-In-One Kiosks"
+        description="Self-service kiosks that reduce wait times, cut staffing costs, and increase customer satisfaction."
+        url="https://clearchoicepay.com/services/kiosks"
+        serviceType="Self-service kiosk solutions"
+        category="Payment kiosks"
+        audience={['Retail operators', 'Convenience stores', 'Quick-service businesses', 'Businesses with customer queues']}
+        related={[
+          { name: 'Kiosk Traffic Lift Case Study', url: '/resources/case-studies/kiosk-traffic-lift' },
+          { name: 'Contact Clear Choice', url: '/contact' },
+        ]}
+        reviews={[testimonial]}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Services', url: '/services' },
+        { name: 'All-In-One Kiosks' },
+      ]}/>
     </main>
   )
 }

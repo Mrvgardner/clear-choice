@@ -2,6 +2,7 @@
 import Button from '@/components/Button'
 import ServiceJsonLd from '@/components/ServiceJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ServiceFaq, { ServiceFaqJsonLd } from '@/components/ServiceFaq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,6 +10,26 @@ export const metadata: Metadata = {
   description:
     'Proactive ATM monitoring with real-time alerts to reduce downtime and cut costly truck rolls.',
   alternates: { canonical: '/services/watchdog' },
+}
+
+const faqs = [
+  {
+    q: 'What does Watchdog monitor?',
+    a: 'Watchdog monitors ATM and payment-system health so operators can see issues earlier, respond faster, and reduce avoidable downtime.',
+  },
+  {
+    q: 'How does Watchdog reduce truck rolls?',
+    a: 'By surfacing problems sooner and helping identify failure patterns, Watchdog gives teams better information before sending a technician onsite.',
+  },
+  {
+    q: 'Who is Watchdog best for?',
+    a: 'Watchdog is best for ATM operators, convenience stores, and businesses with payment equipment where uptime directly affects customer experience and revenue.',
+  },
+]
+
+const testimonial = {
+  body: 'Watchdog caught a system issue at 2 AM and had it fixed before we opened. That saved us thousands in lost sales.',
+  author: 'Restaurant Manager',
 }
 
 export default function Watchdog() {
@@ -22,7 +43,7 @@ export default function Watchdog() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/resources/library/watchdog-playbook" variant="secondary">How Watchdog Works</Button>
+          <Button href="/solutions/watchdog-atm-monitoring" variant="secondary">Uptime Strategy</Button>
         </div>
       </section>
 
@@ -67,8 +88,8 @@ export default function Watchdog() {
       <section className="section">
         <h2 className="text-2xl font-semibold">Who says?</h2>
         <blockquote className="mt-4 border-l-4 border-brand pl-4 text-gray-700 max-w-3xl">
-          "Watchdog caught a system issue at 2 AM and had it fixed before we opened. That saved us thousands in lost sales."
-          <footer className="mt-3 text-sm text-gray-500">— Restaurant Manager, Multi-Location Chain</footer>
+          "{testimonial.body}"
+          <footer className="mt-3 text-sm text-gray-500">— {testimonial.author}, Multi-Location Chain</footer>
         </blockquote>
       </section>
 
@@ -83,10 +104,21 @@ export default function Watchdog() {
           </div>
         </div>
       </section>
+      <ServiceFaq items={faqs} />
+      <ServiceFaqJsonLd items={faqs} />
       <ServiceJsonLd
         name="Watchdog ATM Monitoring"
         description="Proactive ATM monitoring with real-time alerts and fewer truck rolls."
         url="https://clearchoicepay.com/services/watchdog"
+        serviceType="ATM monitoring and uptime support"
+        category="ATM security and monitoring"
+        audience={['ATM operators', 'Convenience stores', 'Retail locations with ATMs']}
+        related={[
+          { name: 'ATM Monitoring Strategy', url: '/solutions/watchdog-atm-monitoring' },
+          { name: 'Watchdog Playbook', url: '/resources/library/watchdog-playbook' },
+          { name: 'Watchdog overview', url: '/watchdog' },
+        ]}
+        reviews={[testimonial]}
       />
       <BreadcrumbJsonLd items={[
         { name: 'Home', url: 'https://clearchoicepay.com/' },

@@ -32,6 +32,27 @@ type Solution = {
 
 const solutions: Solution[] = [
   {
+    title: 'ATM Monitoring Strategy',
+    desc: 'Improve ATM uptime, alert visibility, and service decisions with Watchdog monitoring.',
+    points: ['Real-time alerts', 'Fewer avoidable truck rolls', 'Portfolio visibility'],
+    ctaHref: '/solutions/watchdog-atm-monitoring',
+    icon: <Icon as={Shield} />,
+  },
+  {
+    title: 'Merchant Payment Stability',
+    desc: 'Build processing that fits your risk profile, cost structure, and growth plan.',
+    points: ['High-risk support', 'Statement clarity', 'Chargeback guidance'],
+    ctaHref: '/solutions/merchant-payment-stability',
+    icon: <Icon as={DollarSign} />,
+  },
+  {
+    title: 'Affiliate Partner Growth',
+    desc: 'Grow recurring payment and ATM revenue with training, support, and practical offerings.',
+    points: ['Partner enablement', 'Recurring revenue', 'Merchant and ATM solutions'],
+    ctaHref: '/solutions/affiliate-payment-partner-program',
+    icon: <Icon as={Settings} />,
+  },
+  {
     title: 'Dispensary Solution',
     desc: 'Secure, compliant payment flows for cannabis businesses—built for stability and uptime.',
     points: ['Compliant setup', 'Hardware + servicing', 'Chargeback help'],
@@ -106,10 +127,10 @@ export default function Solutions() {
 
             <div className="mt-5">
               <a
-                href="/#contact"
+                href={s.ctaHref}
                 className="inline-block text-brand font-semibold hover:underline"
               >
-                Talk to an expert →
+                Explore solution →
               </a>
             </div>
           </div>

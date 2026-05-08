@@ -2,12 +2,33 @@
 import Button from '@/components/Button'
 import ServiceJsonLd from '@/components/ServiceJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ServiceFaq, { ServiceFaqJsonLd } from '@/components/ServiceFaq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Foreign Exchange ATMs',
   description: 'FX-enabled ATMs with transparent rates and new fee revenue.',
   alternates: { canonical: '/services/foreign-exchange' },
+}
+
+const faqs = [
+  {
+    q: 'Where do foreign exchange ATMs make the most sense?',
+    a: 'FX-enabled ATMs are strongest in places with international visitors, such as airports, travel hubs, hospitality venues, and tourist-heavy retail environments.',
+  },
+  {
+    q: 'How do FX-enabled ATMs create revenue?',
+    a: 'They give travelers convenient access to currency services while creating transaction-based fee opportunities for qualified locations and operators.',
+  },
+  {
+    q: 'Can Clear Choice help evaluate whether FX fits my venue?',
+    a: 'Yes. Clear Choice can review your location, customer mix, and payment goals to determine whether a foreign exchange ATM program is a practical fit.',
+  },
+]
+
+const testimonial = {
+  body: 'Clear Choice saved us thousands on international transfers. The rates are transparent and the service is fast.',
+  author: 'CFO',
 }
 
 export default function ForeignExchange() {
@@ -66,8 +87,8 @@ export default function ForeignExchange() {
       <section className="section">
         <h2 className="text-2xl font-semibold">Who says?</h2>
         <blockquote className="mt-4 border-l-4 border-brand pl-4 text-gray-700 max-w-3xl">
-          "Clear Choice saved us thousands on international transfers. The rates are transparent and the service is fast."
-          <footer className="mt-3 text-sm text-gray-500">— CFO, Import/Export Business</footer>
+          "{testimonial.body}"
+          <footer className="mt-3 text-sm text-gray-500">— {testimonial.author}, Import/Export Business</footer>
         </blockquote>
       </section>
 
@@ -82,10 +103,20 @@ export default function ForeignExchange() {
           </div>
         </div>
       </section>
+      <ServiceFaq items={faqs} />
+      <ServiceFaqJsonLd items={faqs} />
       <ServiceJsonLd
         name="Foreign Exchange ATMs"
         description="FX-enabled ATMs with transparent rates and new fee revenue."
         url="https://clearchoicepay.com/services/foreign-exchange"
+        serviceType="Foreign exchange ATM services"
+        category="ATM and currency exchange services"
+        audience={['Airport venues', 'Travel hubs', 'Hospitality locations', 'International customer venues']}
+        related={[
+          { name: 'Industries', url: '/industries' },
+          { name: 'Contact Clear Choice', url: '/contact' },
+        ]}
+        reviews={[testimonial]}
       />
       <BreadcrumbJsonLd items={[
         { name: 'Home', url: 'https://clearchoicepay.com/' },

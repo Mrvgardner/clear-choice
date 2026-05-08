@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import GAWebToLead from '@/components/GAWebToLead'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ResourceJsonLd from '@/components/ResourceJsonLd'
 
 export const metadata: Metadata = {
   title: 'Maintenance Before You Call Support',
@@ -41,6 +43,26 @@ export default function MaintenanceGuide() {
           Get the Checklist →
         </button>
       </GAWebToLead>
+      <ResourceJsonLd
+        type="DigitalDocument"
+        title="Maintenance Before You Call Support"
+        description="A printable checklist to help ATM teams resolve common issues and avoid unnecessary service calls."
+        url="/resources/guides/maintenance"
+        genre="Checklist"
+        about={['ATM maintenance', 'ATM uptime', 'Service calls', 'Payment equipment support']}
+        audience={['ATM operators', 'Retail locations with ATMs', 'Convenience store operators']}
+        action={{
+          type: 'RegisterAction',
+          name: 'Request the Maintenance Checklist',
+          target: '/resources/guides/maintenance',
+        }}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Guides', url: '/resources/library' },
+        { name: 'Maintenance Before You Call Support' },
+      ]}/>
     </main>
   )
 }
