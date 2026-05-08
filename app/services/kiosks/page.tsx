@@ -19,7 +19,7 @@ export default function Kiosks() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/resources/kiosk-solutions" variant="secondary">Explore Kiosk Options</Button>
+          <Button href="/contact" variant="secondary">Explore Kiosk Options</Button>
         </div>
       </section>
 

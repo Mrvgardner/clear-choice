@@ -22,7 +22,7 @@ export default function Watchdog() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/resources/watchdog-overview" variant="secondary">How Watchdog Works</Button>
+          <Button href="/resources/library/watchdog-playbook" variant="secondary">How Watchdog Works</Button>
         </div>
       </section>
 

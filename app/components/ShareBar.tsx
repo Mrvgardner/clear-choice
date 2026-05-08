@@ -40,8 +40,10 @@ export default function ShareBar({ title, url }: ShareBarProps) {
     } catch (_) {}
   }, [shareUrl])
 
-  const xHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(shareUrl)}`
-  const liHref = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`
+  const encodeShareParam = (value: string) =>
+    encodeURIComponent(value).replace(/[!'()*]/g, (char) => `%${char.charCodeAt(0).toString(16).toUpperCase()}`)
+  const xHref = `https://twitter.com/intent/tweet?text=${encodeShareParam(shareTitle)}&url=${encodeShareParam(shareUrl)}`
+  const liHref = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeShareParam(shareUrl)}`
 
   const baseBtn = [
     'inline-flex items-center justify-center gap-2',

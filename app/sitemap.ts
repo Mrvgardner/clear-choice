@@ -38,7 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/resources/guides/merchant-compliance',
     '/contact',
     '/book-demo',
-    '/privacy',
     '/terms',
   ]
   const libraryRoutes = [

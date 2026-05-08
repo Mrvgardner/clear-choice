@@ -5,8 +5,6 @@ const ASSET_TO_PDF: Record<string, string> = {
   'atm-launch-checklist': '/downloads/atm-launch-checklist.pdf',
   'atm-safety-checklist': '/downloads/atm-safety-checklist.pdf',
   'atm-maintenance-checklist': '/downloads/atm-maintenance-checklist.pdf',
-  'merchant-statement-guide': '/downloads/merchant-statement-guide.pdf',
-  'watchdog-playbook': '/downloads/watchdog-playbook.pdf',
 }
 
 export const metadata = {

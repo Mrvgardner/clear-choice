@@ -42,7 +42,6 @@ const ASSETS: AssetIndex[] = [
     category: 'One-Pager',
     service: 'Merchant Services',
     date: '2025-04-26',
-    cover: '/library-covers/merchant-statement-guide.png',
   },
   {
     slug: 'watchdog-playbook',
@@ -51,7 +50,6 @@ const ASSETS: AssetIndex[] = [
     category: 'Playbook',
     service: 'Watchdog',
     date: '2025-05-02',
-    cover: '/library-covers/watchdog-playbook.png',
   },
   // 🚀 Add more assets here as you publish them
 ]

@@ -12,7 +12,7 @@ interface BlogPostPageProps {
 }
 
 function BlogArticleJsonLd({ post, minutes }: { post: NonNullable<ReturnType<typeof getPostBySlug>>, minutes: number }) {
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://clearchoicepay.com').replace(/\/$/, '')
+  const siteUrl = 'https://clearchoicepay.com'
   const anyPost = post as any
   const image = anyPost.ogImage || post.image || `${siteUrl}/images/og/blog-default.png`
   const data = {
@@ -57,7 +57,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const title = anyPost.metaTitle || post.title
   const description = anyPost.metaDescription || post.excerpt || ''
   const keywords: string[] | undefined = anyPost.keywords
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const siteUrl = 'https://clearchoicepay.com'
   const url = `${siteUrl.replace(/\/$/, '')}/resources/blog/${post.slug}`
   const ogImage = anyPost.ogImage || `${siteUrl.replace(/\/$/, '')}/images/og/blog-default.png`
   return {
@@ -96,6 +96,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   // Get the image from post metadata
   const anyPost = post as any
   const heroImage = anyPost.image
+  const postUrl = `https://clearchoicepay.com/resources/blog/${post.slug}`
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -120,7 +121,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           <div className="mb-6">
-            <ShareBar title={post.title} />
+            <ShareBar title={post.title} url={postUrl} />
           </div>
           
           {post.tags && post.tags.length > 0 && (

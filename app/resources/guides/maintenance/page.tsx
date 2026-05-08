@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default function MaintenanceGuide() {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const base = 'https://clearchoicepay.com'
   const ret = `${base}/resources/guides/maintenance/thank-you` // swap to prod at go-live
 
   return (

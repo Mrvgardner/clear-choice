@@ -9,7 +9,7 @@ const ContactForm: React.FC = () => {
       className="flex flex-col space-y-4"
     >
       <input type="hidden" name="oid" value="00Da500000FOGNx" />
-  <input type="hidden" name="retURL" value={`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/thank-you`} />
+  <input type="hidden" name="retURL" value="https://clearchoicepay.com/thank-you" />
       <input type="hidden" name="lead_source" value="Website" />
       
       <label className="flex flex-col">

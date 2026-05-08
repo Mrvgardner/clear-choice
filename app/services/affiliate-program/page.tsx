@@ -21,7 +21,7 @@ export default function AffiliateProgram() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/resources/affiliate-program-guide" variant="secondary">Download Program Guide</Button>
+          <Button href="/highriskpartners" variant="secondary">Explore Partner Program</Button>
         </div>
       </section>
 

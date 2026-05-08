@@ -21,7 +21,7 @@ export default function ForeignExchange() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/resources/fx-rates" variant="secondary">View Current Rates</Button>
+          <Button href="/contact" variant="secondary">Talk FX Strategy</Button>
         </div>
       </section>
 

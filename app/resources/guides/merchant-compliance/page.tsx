@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default function MerchantComplianceGuide() {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const base = 'https://clearchoicepay.com'
   const ret = `${base}/resources/guides/merchant-compliance/thank-you`
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">

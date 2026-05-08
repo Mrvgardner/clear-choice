@@ -6,7 +6,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://clearchoicepay.com'
+const siteUrl = 'https://clearchoicepay.com'
 const siteName = 'Clear Choice Payment Solutions'
 const siteDesc =
   'Payments Without Limits. Merchant services, ATM placement & monitoring, kiosks, and FX-enabled ATMs built to grow your revenue.'

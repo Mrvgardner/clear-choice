@@ -39,8 +39,6 @@ const assets: Record<string, Asset> = {
     summary:
       'Spot junk fees, decode line items, and find savings without hiring a consultant.',
     bullets: ['Fee glossary', 'High-impact savings areas', 'Sample statement annotated'],
-    cover: '/library-covers/merchant-statement-guide.png',
-    pdf: '/downloads/merchant-statement-guide.pdf',
     badge: 'One-Pager',
   },
   'watchdog-playbook': {
@@ -49,8 +47,6 @@ const assets: Record<string, Asset> = {
     summary:
       'Proactive monitoring that slashes emergency truck rolls. Patterns to watch and workflows that prevent outages.',
     bullets: ['Alert triage workflow', 'Common failure signatures', 'KPIs for uptime'],
-    cover: '/library-covers/watchdog-playbook.png',
-    pdf: '/downloads/watchdog-playbook.pdf',
     badge: 'Playbook',
   },
   'atm-safety-checklist': {

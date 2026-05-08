@@ -21,7 +21,7 @@ export default function MerchantServices() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/resources/merchant-services-spec" variant="secondary">Download Spec Sheet</Button>
+          <Button href="/resources/guides/merchant-compliance" variant="secondary">Download Compliance Guide</Button>
         </div>
       </section>
 

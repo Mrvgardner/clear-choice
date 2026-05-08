@@ -1,5 +1,5 @@
 export default function SeoJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://clearchoicepay.com'
+  const siteUrl = 'https://clearchoicepay.com'
   const normalizedSiteUrl = siteUrl.replace(/\/$/, '')
 
   const org = {

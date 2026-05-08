@@ -19,7 +19,7 @@ export default function ATMPlacement() {
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
-          <Button href="/resources/atm-placement-guide" variant="secondary">Download Placement Guide</Button>
+          <Button href="/resources/library/atm-launch-checklist" variant="secondary">Download Placement Guide</Button>
         </div>
       </section>
 
