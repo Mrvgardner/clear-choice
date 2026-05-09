@@ -42,7 +42,7 @@ Related URLs:
 
 Canonical URL: https://clearchoicepay.com/services/watchdog
 
-Watchdog is a proactive ATM monitoring solution designed to improve uptime, surface real-time alerts, reduce emergency service calls, and help operators catch issues before they become larger problems. It is relevant to ATM operators, route owners, and retail or convenience locations with ATM programs.
+Watchdog is a proactive ATM monitoring and protection solution designed to improve uptime, strengthen ATM connectivity, surface real-time alerts, reduce emergency service calls, and help operators catch fraud, tampering, hackers, connectivity failures, and other issues before they become larger problems. It is relevant to ATM operators, route owners, and retail or convenience locations with ATM programs.
 
 Strategic hub:
 - https://clearchoicepay.com/solutions/watchdog-atm-monitoring
@@ -75,7 +75,7 @@ Related URLs:
 
 Canonical URL: https://clearchoicepay.com/services/affiliate-program
 
-The Affiliate Program helps entrepreneurs, consultants, sales partners, and ISO-style operators build recurring payment and ATM revenue without traditional ISO overhead. Clear Choice provides training, support, and access to payment and ATM solutions.
+The Affiliate Program helps entrepreneurs, consultants, sales partners, and ISO-style operators build recurring payment and ATM revenue without taking on the network-fee burden and operational obligations of becoming a traditional ISO. Clear Choice provides training, support, and access to payment and ATM solutions while giving partners room to manage their business.
 
 Strategic hub:
 - https://clearchoicepay.com/solutions/affiliate-payment-partner-program
@@ -90,7 +90,7 @@ Related URLs:
 
 Canonical URL: https://clearchoicepay.com/solutions/watchdog-atm-monitoring
 
-This hub explains how ATM operators, route owners, and retail locations can use monitoring to reduce blind spots, improve uptime, prioritize support, and expand into new markets with better visibility.
+This hub explains how ATM operators, route owners, and retail locations can use monitoring, safer connections, real-time threat protection, and expert support to reduce blind spots, improve uptime, prioritize support, and expand into new markets with better visibility. Watchdog positioning can reference Q1 2025 ATM crime snapshot data: 43,757 incidents logged, cash trapping at 62.4% of fraud tactics, and North America activity classified as 72% fraud and 28% physical incidents.
 
 ### Merchant Payment Stability
 
@@ -102,7 +102,7 @@ This hub explains how merchants can build more stable payment processing, improv
 
 Canonical URL: https://clearchoicepay.com/solutions/affiliate-payment-partner-program
 
-This hub explains how affiliate and ISO-style partners can grow recurring revenue by connecting businesses with Clear Choice merchant services, ATM programs, monitoring, and payment support.
+This hub explains how affiliate and ISO-style partners can grow recurring revenue, manage their business with more freedom, and avoid the ISO-level network-fee burden by connecting businesses with Clear Choice merchant services, ATM programs, monitoring, and payment support.
 
 ## Audiences
 

@@ -43,8 +43,10 @@ Clear Choice Payment Solutions serves merchants, ATM operators, retail locations
 - Kiosk and POS payment strategy
 - Foreign exchange ATM programs
 - Affiliate payment revenue programs
+- Affiliate partners who want ISO-style business freedom without ISO-level network-fee burden
 - Payment compliance and chargeback support
 - ATM uptime and monitoring strategy
+- ATM crime, fraud, tampering, and safer connection monitoring
 - Merchant payment stability
 - Affiliate and ISO-style partner growth
 

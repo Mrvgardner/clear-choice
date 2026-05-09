@@ -33,9 +33,9 @@ export default function ServicesOverview() {
     {
       title: 'Affiliate Program',
       slug: 'affiliate-program',
-      desc: 'Start an ISO-style business without the headaches.',
+      desc: 'Build with ISO-style freedom without the ISO-level network-fee burden.',
       icon: <Icon as={Users} />,
-      values: ['Recurring revenue', 'Training & compliance', 'Partner support'],
+      values: ['Network-fee relief', 'Business freedom', 'Partner support'],
     },
     {
       title: 'ATM Placement',

@@ -3,15 +3,15 @@ import SolutionHub, { SolutionHubData } from '../SolutionHub'
 
 export const metadata: Metadata = {
   title: 'Affiliate Payment Partner Growth Strategy',
-  description: 'A practical hub for affiliate and ISO-style partners who want recurring payment and ATM revenue with training, support, and compliance guidance.',
+  description: 'A practical hub for affiliate partners who want ISO-style business freedom without the network-fee burden of becoming an ISO.',
   alternates: { canonical: '/solutions/affiliate-payment-partner-program' },
 }
 
 const hub: SolutionHubData = {
   eyebrow: 'Affiliate program strategy',
-  title: 'Affiliate partner growth for payment and ATM opportunities',
+  title: 'ISO-style freedom without the ISO-level network-fee burden',
   description:
-    'Clear Choice helps entrepreneurs, consultants, and ISO-style partners build recurring revenue by connecting businesses with merchant services, ATM programs, monitoring, and related payment support.',
+    'Clear Choice helps partners build recurring payment and ATM revenue with room to manage their own business, without requiring them to pay network fees and carry obligations like a traditional ISO.',
   canonicalPath: '/solutions/affiliate-payment-partner-program',
   primaryCta: { label: 'Book a Demo', href: '/book-demo' },
   secondaryCta: { label: 'Explore the Affiliate Program', href: '/services/affiliate-program' },
@@ -22,21 +22,21 @@ const hub: SolutionHubData = {
     'Entrepreneurs entering payment or ATM sales',
   ],
   problems: [
-    'Traditional ISO models can create too much compliance, operations, and support burden too early.',
+    'Traditional ISO models can create heavy network fees, compliance obligations, and operations burden too early.',
     'Partners need credible offerings beyond a single processing product.',
     'New partners need training and account support before they can sell confidently.',
-    'National opportunity is easier to pursue when partners can start in markets where they already have relationships.',
+    'Partners want freedom to manage their business without paying and operating like a full ISO from day one.',
   ],
   approach: [
     {
-      title: 'Start with fit',
-      body: 'The strongest partner strategy begins with the partner audience, market access, and services they can credibly introduce.',
-      points: ['Partner profile review', 'Audience and vertical fit', 'Offer alignment'],
+      title: 'Remove the heavy cost barrier',
+      body: 'The program is designed for partners who want to grow payment and ATM revenue without taking on the same network-fee burden traditional ISOs face.',
+      points: ['Lower-overhead path', 'No ISO-level network-fee burden', 'Clearer route to recurring revenue'],
     },
     {
-      title: 'Provide practical enablement',
-      body: 'Clear Choice supports partners with training, service context, and guidance so conversations are grounded in real business problems.',
-      points: ['Training support', 'Compliance awareness', 'Service education'],
+      title: 'Keep business control',
+      body: 'Partners can manage their relationships, pursue the markets they know, and build their book without being boxed into a rigid reseller model.',
+      points: ['Business ownership mindset', 'Market-by-market growth', 'Flexible partner support'],
     },
     {
       title: 'Expand from useful wins',
@@ -44,7 +44,7 @@ const hub: SolutionHubData = {
       points: ['Recurring revenue opportunities', 'Merchant and ATM solutions', 'Ongoing account support'],
     },
   ],
-  proof: ['Better partner confidence', 'More ways to serve merchant accounts', 'Recurring revenue potential'],
+  proof: ['Freedom to manage the business', 'Relief from ISO-level network-fee burden', 'Recurring revenue potential'],
   service: { label: 'Affiliate Program', href: '/services/affiliate-program' },
   resource: { label: 'High-Risk Partners', href: '/highriskpartners' },
   related: [

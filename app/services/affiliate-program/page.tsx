@@ -7,14 +7,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Affiliate Program',
-  description: 'Start an ISO‑style business with training, compliance, and support.',
+  description: 'Build an ISO-style payments business without taking on the network-fee burden of becoming an ISO.',
   alternates: { canonical: '/services/affiliate-program' },
 }
 
 const faqs = [
   {
     q: 'Who is the Clear Choice affiliate program for?',
-    a: 'The affiliate program is for partners and entrepreneurs who want recurring revenue opportunities in payments or ATMs without taking on traditional ISO overhead alone.',
+    a: 'The affiliate program is for partners and entrepreneurs who want recurring revenue opportunities in payments or ATMs without taking on the network-fee burden and overhead of becoming an ISO.',
   },
   {
     q: 'Does Clear Choice provide affiliate training?',
@@ -24,10 +24,14 @@ const faqs = [
     q: 'What can affiliates offer through Clear Choice?',
     a: 'Affiliates can connect businesses with Clear Choice payment and ATM solutions, including merchant services, ATM placement, monitoring, kiosks, and related support.',
   },
+  {
+    q: 'Do affiliates have to pay network fees like an ISO?',
+    a: 'No. Clear Choice gives affiliate partners room to manage and grow their business without requiring them to shoulder the same network-fee structure and obligations that traditional ISOs face.',
+  },
 ]
 
 const testimonial = {
-  body: 'Clear Choice made ISO partnership simple. Great training, ongoing support, and steady recurring revenue.',
+  body: 'Clear Choice gave us the freedom to manage the business without the network-fee burden of becoming an ISO ourselves.',
   author: 'Clear Choice Affiliate',
 }
 
@@ -38,7 +42,7 @@ export default function AffiliateProgram() {
       <section className="section">
         <h1 className="text-display font-bold">Affiliate Program</h1>
         <p className="mt-4 text-lead text-gray-600 max-w-2xl">
-          Start an ISO-style business without the headaches.
+          Manage your payments business with ISO-style freedom without paying network fees like one.
         </p>
         <div className="mt-8 flex gap-4">
           <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
@@ -50,7 +54,7 @@ export default function AffiliateProgram() {
       <section className="section">
         <h2 className="text-2xl font-semibold">What's in your way</h2>
         <p className="mt-3 text-gray-700 max-w-3xl">
-          Complex ISO requirements, compliance headaches, and training gaps. Traditional programs leave you drowning in paperwork with minimal support.
+          Becoming an ISO can mean heavy network fees, compliance obligations, paperwork, and support gaps before the business has room to grow.
         </p>
       </section>
 
@@ -58,7 +62,7 @@ export default function AffiliateProgram() {
       <section className="section">
         <h2 className="text-2xl font-semibold">How Clear Choice helps</h2>
         <ol className="mt-4 grid sm:grid-cols-3 gap-6">
-          {['Complete training & certification', 'Ongoing compliance support', 'Revenue share & growth tools'].map((step, i) => (
+          {['Lower-overhead partner path', 'Ongoing compliance support', 'Revenue share & growth tools'].map((step, i) => (
             <li key={step} className="border border-gray-200 rounded-xl p-5">
               <div className="text-sm text-gray-500">Step {i + 1}</div>
               <div className="mt-1 font-semibold">{step}</div>
@@ -72,8 +76,8 @@ export default function AffiliateProgram() {
         <h2 className="text-2xl font-semibold">What you'll get</h2>
         <ul className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-800">
           {[
+            'Freedom to manage your business without ISO-level network fees',
             'Recurring revenue from merchant portfolios',
-            'Complete training and compliance support',
             'Partner tools and dedicated account management',
           ].map(b => (
             <li key={b} className="flex gap-2">
@@ -96,7 +100,7 @@ export default function AffiliateProgram() {
       <section className="section">
         <div className="rounded-2xl border border-gray-200 p-8 text-center">
           <h3 className="text-xl font-semibold">Ready to build recurring revenue?</h3>
-          <p className="mt-2 text-gray-600">Join our affiliate program and start earning from day one.</p>
+          <p className="mt-2 text-gray-600">Build like an operator without carrying the full ISO cost structure yourself.</p>
           <div className="mt-6 flex justify-center gap-4">
             <Button href="/book-demo" variant="primary">Book a Free Demo Now</Button>
             <Button href="/contact" variant="secondary">Talk to Sales</Button>
@@ -107,7 +111,7 @@ export default function AffiliateProgram() {
       <ServiceFaqJsonLd items={faqs} />
       <ServiceJsonLd
         name="Affiliate Program"
-        description="Start an ISO‑style business with training, compliance, and support."
+        description="Build an ISO-style payments business without taking on the network-fee burden of becoming an ISO."
         url="https://clearchoicepay.com/services/affiliate-program"
         serviceType="Payment and ATM affiliate program"
         category="Partner program"
