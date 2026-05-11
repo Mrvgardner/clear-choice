@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPostBySlug, getAllPostSlugs } from '@/lib/posts'
+import { formatContentDate } from '@/lib/dates'
 import ShareBar from '@/components/ShareBar'
 
 interface BlogPostPageProps {
@@ -109,13 +110,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="text-sm text-gray-600 mb-2">By {post.author || 'Victor Gardner, Jr.'}</div>
           
           <div className="text-sm text-gray-500 mb-4 flex items-center gap-2">
-            <span>
-              {new Date(post.date + 'T12:00:00').toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </span>
+            <span>{formatContentDate(post.date)}</span>
             <span aria-hidden>•</span>
             <span>{minutes} min read</span>
           </div>

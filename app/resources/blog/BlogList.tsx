@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { formatContentDate } from '@/lib/dates'
 import BlogFilter from './BlogFilter'
 
 type Post = {
@@ -78,11 +79,7 @@ export default function BlogList({ posts, allTags, selectedTag }: BlogListProps)
                 </h2>
                 {post.date && (
                   <time className="text-sm text-gray-500 mb-3 block">
-                    {new Date(post.date + 'T12:00:00').toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
+                    {formatContentDate(post.date)}
                   </time>
                 )}
                 {post.excerpt && (

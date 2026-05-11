@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { parseContentDate } from './dates'
 
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
@@ -49,7 +50,10 @@ export function getAllPosts(): Post[] {
   // Filter out future-dated posts and sort by date descending
   const now = Date.now()
   return allPostsData
-    .filter((post) => new Date(post.date).getTime() <= now)
+    .filter((post) => {
+      const date = parseContentDate(post.date)
+      return !date || date.getTime() <= now
+    })
     .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
