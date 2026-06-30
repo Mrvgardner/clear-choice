@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import type { HTMLAttributes } from 'react'
 import { getPostBySlug, getAllPostSlugs } from '@/lib/posts'
 import { formatContentDate } from '@/lib/dates'
 import ShareBar from '@/components/ShareBar'
@@ -41,6 +42,31 @@ function BlogArticleJsonLd({ post, minutes }: { post: NonNullable<ReturnType<typ
   }
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+}
+
+function BlogH2({ children, className = '', ...props }: HTMLAttributes<HTMLHeadingElement>) {
+  const label = typeof children === 'string' ? children.trim().replace(/[’]/g, "'") : ''
+
+  if (label === "Here's the Move") {
+    return (
+      <h2
+        {...props}
+        className={`not-prose my-10 rounded-md border-l-4 border-[#ff4f00] bg-[#0a1a2f] px-5 py-4 text-xl font-bold uppercase tracking-[0.02em] text-white shadow-sm ${className}`}
+      >
+        {children}
+      </h2>
+    )
+  }
+
+  return (
+    <h2 {...props} className={className}>
+      {children}
+    </h2>
+  )
+}
+
+const mdxComponents = {
+  h2: BlogH2,
 }
 
 export async function generateStaticParams() {
@@ -146,7 +172,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         )}
         
         <div className="prose prose-lg max-w-none">
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} components={mdxComponents} />
         </div>
       </article>
       <BlogArticleJsonLd post={post} minutes={minutes} />
