@@ -13,6 +13,7 @@ type Post = {
   date?: string
   tags?: string[]
   image?: string
+  cardImage?: string
 }
 
 type BlogListProps = {
@@ -63,10 +64,10 @@ export default function BlogList({ posts, allTags, selectedTag }: BlogListProps)
               className="block group"
             >
               <article className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-[#ff4f00]/40 transition-all duration-200">
-                {post.image && (
+                {(post.cardImage || post.image) && (
                   <div className="relative w-full h-64 bg-gray-100">
                     <Image
-                      src={post.image}
+                      src={post.cardImage || post.image!}
                       alt={post.title}
                       fill
                       className="object-cover object-[center_35%]"

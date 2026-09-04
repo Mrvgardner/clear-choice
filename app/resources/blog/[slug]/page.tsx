@@ -65,8 +65,20 @@ function BlogH2({ children, className = '', ...props }: HTMLAttributes<HTMLHeadi
   )
 }
 
+function MoveLead({ children, className = '', ...props }: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      {...props}
+      className={`not-prose my-8 rounded-md border border-[#ffd7c2] bg-[#fff7f2] px-5 py-5 text-lg font-semibold leading-relaxed text-[#0a1a2f] shadow-sm ${className}`}
+    >
+      {children}
+    </div>
+  )
+}
+
 const mdxComponents = {
   h2: BlogH2,
+  MoveLead,
 }
 
 export async function generateStaticParams() {
@@ -125,28 +137,59 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const heroImage = anyPost.image
   const postUrl = `https://clearchoicepay.com/resources/blog/${post.slug}`
 
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <article>
-        <header className="mb-8">
-          <div className="mb-4">
-            <a href="/resources/blog" className="text-[#ff4f00] hover:underline">← Back to Blog</a>
-          </div>
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-          <div className="text-sm text-gray-600 mb-2">By {post.author || 'Victor Gardner, Jr.'}</div>
-          
-          <div className="text-sm text-gray-500 mb-4 flex items-center gap-2">
-            <span>{formatContentDate(post.date)}</span>
-            <span aria-hidden>•</span>
-            <span>{minutes} min read</span>
-          </div>
+  const author = post.author || 'Victor Gardner, Jr.'
+  const backLink = (
+    <a href="/resources/blog" className="text-[#ff4f00] hover:underline">← Back to Blog</a>
+  )
 
+  return (
+    <>
+      <article>
+        {heroImage ? (
+          <header className="relative w-full min-h-[440px] md:min-h-[560px] flex items-end bg-[#0a1a2f]">
+            <Image
+              src={heroImage}
+              alt={post.title}
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-[#0a1a2f]/95 via-[#0a1a2f]/55 to-[#0a1a2f]/10"
+              aria-hidden
+            />
+            <div className="relative w-full max-w-4xl mx-auto px-4 pt-40 pb-10 text-white">
+              <div className="mb-4">{backLink}</div>
+              <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">{post.title}</h1>
+              <div className="text-sm text-white/90 mb-1">By {author}</div>
+              <div className="text-sm text-white/75 flex items-center gap-2">
+                <span>{formatContentDate(post.date)}</span>
+                <span aria-hidden>•</span>
+                <span>{minutes} min read</span>
+              </div>
+            </div>
+          </header>
+        ) : (
+          <header className="max-w-4xl mx-auto px-4 pt-8">
+            <div className="mb-4">{backLink}</div>
+            <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+            <div className="text-sm text-gray-600 mb-2">By {author}</div>
+            <div className="text-sm text-gray-500 flex items-center gap-2">
+              <span>{formatContentDate(post.date)}</span>
+              <span aria-hidden>•</span>
+              <span>{minutes} min read</span>
+            </div>
+          </header>
+        )}
+
+        <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="mb-6">
             <ShareBar title={post.title} url={postUrl} />
           </div>
-          
+
           {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-8">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
@@ -157,25 +200,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               ))}
             </div>
           )}
-        </header>
-        
-        {heroImage && (
-          <div className="relative w-full h-[400px] mb-8 rounded-lg overflow-hidden">
-            <Image
-              src={heroImage}
-              alt={post.title}
-              fill
-              className="object-cover"
-              priority
-            />
+
+          <div className="prose prose-lg max-w-none">
+            <MDXRemote source={post.content} components={mdxComponents} />
           </div>
-        )}
-        
-        <div className="prose prose-lg max-w-none">
-          <MDXRemote source={post.content} components={mdxComponents} />
         </div>
       </article>
       <BlogArticleJsonLd post={post} minutes={minutes} />
-    </div>
+    </>
   )
 }

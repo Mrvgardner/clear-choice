@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 import { listDocs } from '@/lib/mdx'
 import { getAllPosts } from '@/lib/posts'
 
+export const revalidate = 3600
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://clearchoicepay.com'
   const now = new Date()

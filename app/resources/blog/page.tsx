@@ -1,6 +1,8 @@
 import { getAllPosts } from '@/lib/posts'
 import BlogList from './BlogList'
 
+export const revalidate = 3600
+
 export default function BlogPage({
   searchParams,
 }: {

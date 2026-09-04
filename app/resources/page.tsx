@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/resources' },
 }
 
+export const revalidate = 3600
+
 function ResourcesJsonLd() {
   const data = {
     '@context': 'https://schema.org',

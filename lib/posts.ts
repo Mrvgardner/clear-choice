@@ -13,6 +13,7 @@ export interface Post {
   tags?: string[]
   author?: string
   image?: string
+  cardImage?: string
   metaTitle?: string
   metaDescription?: string
   keywords?: string[]
